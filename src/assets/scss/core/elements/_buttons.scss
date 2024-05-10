@@ -1,0 +1,275 @@
+// Button variants
+@mixin button-variant($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+
+  &:focus,
+  &.focus {
+    color: $color;
+    background-color: darken($background, 10%);
+    border-color: darken($border, 25%);
+  }
+  &:hover {
+    color: $color;
+    background-color: darken($background, 10%);
+    border-color: darken($border, 12%);
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    color: $color;
+    background-color: darken($background, 10%);
+    background-image: none;
+    border-color: darken($border, 12%);
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: $color;
+      background-color: darken($background, 17%);
+      border-color: darken($border, 25%);
+    }
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus,
+    &.focus {
+      background-color: $background;
+      border-color: $border;
+    }
+  }
+
+  .badge {
+    color: $background;
+    background-color: $color;
+  }
+}
+@mixin button-outline-variant($color, $background, $border) {
+  color: $background;
+  border-color: $border;
+
+  &:focus,
+  &.focus {
+    color: $color;
+    background-color: $background;
+    border-color: $border;
+  }
+  &:hover {
+    color: $color;
+    background-color: $background;
+    border-color: $border;
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    background-image: none;
+    color: $color;
+    background-color: $background;
+    border-color: $border;
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: $color;
+      background-color: $background;
+      border-color: $border;
+    }
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus,
+    &.focus {
+      background-color: $background;
+      border-color: $border;
+    }
+  }
+
+  .badge {
+    color: $color;
+    background-color: $background;
+  }
+}
+
+// scss-docs-start btn-size-mixin
+@mixin button-size($padding-y, $padding-x, $border-radius) {
+  padding: $padding-y $padding-x;
+
+  // Manually declare to provide an override to the browser default
+  @include border-radius($border-radius);
+}
+// scss-docs-end btn-size-mixin
+
+.btn {
+  @include font-family(base);
+  @include font-weight(base);
+  @include font-size(button);
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: color(button-light);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  margin-bottom: 0;
+  background-color: color-bg(button-light);
+  border: 1px solid transparent;
+  box-shadow: 0 2px 0 rgba(0,0,0,.02);
+  @include button-size($button--padding-v, $button--padding-h, $button--radius);
+  transition: $button-transition;
+  -webkit-tap-highlight-color: transparent;
+  > * {
+    @include user-select(none);
+  }
+  &:hover {
+    color: color(button-light);
+    text-decoration: none;
+  }
+
+  .btn-check:focus + &,
+  &:focus {
+    outline: 0;
+    box-shadow: none;
+  }
+
+  .btn-check:checked + &,
+  .btn-check:active + &,
+  &:active,
+  &.active {
+    box-shadow: none;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  &:disabled,
+  &.disabled,
+  fieldset:disabled & {
+    pointer-events: none;
+    opacity: $button-disabled-opacity;
+    box-shadow: none;
+  }
+
+  .icon {
+    display: inline-block;
+    margin-right: 0.25rem;
+    // vertical-align: -0.125em;
+    // width: 1rem;
+    // height: 1rem;
+  }
+  .icon-right {
+    display: flex;
+    align-items: center;
+    .icon {
+      margin-left: 0.25rem;
+      margin-right: 0;
+    }
+  }
+}
+
+.btn-link {
+  font-weight: 400;
+  color: color(button-link);
+  border-radius: 0;
+  text-decoration: underline;
+  &,
+  &:active,
+  &.active {
+    color: color(button-link);
+    background-color: transparent;
+    box-shadow: none;
+  }
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: transparent;
+  }
+  &:hover,
+  &:focus {
+    color: darken(color(button-link), 10%);
+    background-color: transparent;
+  }
+
+  &[disabled],
+  fieldset[disabled] & {
+    color: darken(color(button-link), 100%);
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
+.btn-primary {
+  @include button-variant(
+    color(button-primary),
+    color-bg(button-primary),
+    color-border(button-primary)
+  );
+}
+.btn-outline-primary {
+  @include button-outline-variant(
+    color(button-primary),
+    color-bg(button-primary),
+    color-border(button-primary)
+  );
+}
+
+.btn-success {
+  @include button-variant(
+    color(button-success),
+    color-bg(button-success),
+    color-border(button-success)
+  );
+}
+
+.btn-error {
+  @include button-variant(
+    color(button-error),
+    color-bg(button-error),
+    color-border(button-error)
+  );
+}
+
+.btn-info {
+  @include button-variant(
+    color(button-info),
+    color-bg(button-info),
+    color-border(button-info)
+  );
+}
+
+.btn-warning {
+  @include button-variant(
+    color(button-warning),
+    color-bg(button-warning),
+    color-border(button-warning)
+  );
+}
+
+.btn-cancel {
+  @include button-variant(
+    color(button-cancel),
+    color-bg(button-cancel),
+    color-border(button-cancel)
+  );
+}
+
+.btn-icon {
+  padding: 0.75rem;
+  .icon {
+    margin: 0;
+  }
+}
+
+.btn-full {
+  width: 100%;
+  justify-content: center;
+}

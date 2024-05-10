@@ -1,0 +1,59 @@
+// Typography
+$font--provider:    'Google Fonts';
+$font--import:      'Inter:400,500,600,700';
+$font--icon:      'Material Icons';
+// https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap&family=Public+Sans:wght@400;500;600;700
+
+// The font set
+$font--family: (
+	heading: 	'"Inter", sans-serif',
+	icon: 'Material Icons',
+	base:		'"Inter", sans-serif',
+	code: 		'Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace',
+	pre: 		'"Courier 10 Pitch", Courier, monospace'
+);
+
+// The typographic scale
+$font--scale: (
+	// key 		// font-size, line-height, kerning
+	alpha:   	( 32px, 42px, -0.3px ),
+	beta:    	( 27px, 37px, -0.3px ),
+	gamma:   	( 23px, 33px, -0.3px ),
+	delta:   	( 18px, 28px, -0.1px ),
+	epsilon: 	( 16px, 26px, -0.1px ),
+	zeta:    	( 14px, 24px, -0.1px ),
+	eta:     	( 12px, 22px, -0.1px ),
+	theta:   	( 12px, 22px, null ),
+	tabline:   	( 10px, 18px, null ),
+);
+
+// Base elements: font size
+$font--size: (
+	// ↓ Mobile 	// key in $font--scale
+	h1:				'beta',
+	h2:				'gamma',
+	h3:				'delta',
+	h4:				'delta',
+	base:			'epsilon',
+	sm:				'zeta',
+	xs:				'eta',
+	xxs:			'theta',
+	xxxs:          'tabline',
+	bquote: 		'epsilon',
+	figcap: 		'theta',
+	code: 			'eta',
+	pre: 			'eta',
+	table: 			'eta',
+	title: 'delta',
+	subtitle: 'zeta',
+);
+
+// Base elements: font weight
+$font--weight: (
+	heading:	800,
+	base: 		400,
+	strong:		700,
+	bquote: 	600,
+	medium: 	500,
+	figcap: 	null,
+);

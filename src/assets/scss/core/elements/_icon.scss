@@ -1,0 +1,23 @@
+﻿.icon {
+  @include user-select(none);
+  width: auto;
+  max-width: 24px;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  > svg {
+    width: 100%;
+  }
+  // @include media("<=large") {
+  //   @include font-size(base);
+  // }
+}

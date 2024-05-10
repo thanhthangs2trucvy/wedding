@@ -1,0 +1,67 @@
+﻿{
+  "error": {
+    "-100": "Đã có sự cố đáng tiếc xảy ra. Bạn vui lòng thử lại sau.",
+    "0": "Request Timeout",
+    "400": "Bad Request",
+    "401": "Phiên bản đăng nhập đã hết hạn. Bạn vui lòng đăng nhập lại.",
+    "402": "Payment Required ",
+    "403": "Forbidden",
+    "404": "Not Found",
+    "405": "Method Not Allowed",
+    "406": "Not Acceptable",
+    "407": "Proxy Authentication Required",
+    "408": "Request Timeout",
+    "409": "Conflict",
+    "410": "Gone",
+    "411": "Length Required",
+    "412": "Precondition Failed",
+    "413": "Payload Too Large",
+    "414": "URI Too Long",
+    "415": "Unsupported Media Type",
+    "416": "Range Not Satisfiable",
+    "417": "Expectation Failed",
+    "500": "Đã có sự cố đáng tiếc xảy ra. Bạn vui lòng thử lại sau.",
+    "501": "Not Implemented",
+    "502": "Bad Gateway",
+    "503": "Service Unavailable",
+    "504": "Gateway Timeout",
+    "505": "HTTP Version Not Supported",
+    "have_error": "An error occurred. Please try again later",
+    "error_on_request": "An error occurred while sending the request",
+    "error_on_handle": "An error occurred while processing data",
+    "server_error": "Server Error"
+  },
+  "dialog": {
+    "error": "Error",
+    "cancel": "Cancel",
+    "warning": "Warn",
+    "loading": "Loading",
+    "select": "Select"
+  },
+  "validation": {
+    "email_required": "Email is required",
+    "password_required": "Password is required",
+    "store_required": "Store is required",
+    "preserved": "Preserved temperature must be number"
+  },
+  "message": {
+    "success": "Success",
+    "fail": "fail",
+    "error": "Đã có sự cố đáng tiếc xảy ra",
+    "CP00": "Chương trình đã kết thúc",
+    "CP02": "Mã QRCode không áp dụng tại cửa hàng",
+    "CP04": "Bạn đã hết lượt nhận quà",
+    "CP05": "Chương trình đã kết thúc",
+    "CP06": "Cửa hàng không áp dụng chương trình",
+    "MB12": "Chương trình đã kết thúc"
+  },
+  "description": {
+    "error": "Bạn vui lòng thử lại sau",
+    "CP00": "Cảm ơn bạn đã tham gia.", 
+    "CP02": "Cảm ơn bạn đã tham gia chương trình.",
+    "CP04": "Cảm ơn bạn đã tham gia chương trình.",
+    "CP05": "Cảm ơn bạn đã tham gia.",
+    "CP06": "Cảm ơn bạn đã tham gia chương trình.",
+    "MB12": "Cảm ơn bạn đã tham gia chương trình."
+  }
+}

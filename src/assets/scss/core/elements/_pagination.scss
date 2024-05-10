@@ -1,0 +1,284 @@
+﻿.rc-pagination {
+  margin: 0;
+  padding: 0;
+  @include font-size(sm);
+  line-height: 1.2;
+  display: flex;
+  // align-items: center;
+
+  ul,
+  ol {
+    @include reset-list();
+  }
+  li {
+    margin: 0;
+    margin: 0 calc($pagination-item-spacing / 2);
+    display: flex;
+    align-items: center;
+    user-select: none;
+  }
+
+  &-total-text {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: auto !important;
+  }
+
+  &-item {
+    margin: 0 calc($pagination-item-spacing / 2);
+    // display: inline-block;
+    // min-width: $pagination-item-size;
+    // margin-right: $pagination-item-spacing;
+    // text-align: center;
+    // vertical-align: middle;
+    // list-style: none;
+    // background-color: $pagination-item-bg;
+    // border: 1px solid #d9d9d9;
+    // border-radius: $pagination-item-radius;
+    // outline: 0;
+    // cursor: pointer;
+    // user-select: none;
+
+    a {
+      position: relative;
+      display: block;
+      color: $primary-color;
+      text-decoration: none;
+      border: 1px solid $pagination-item-border;
+      cursor: pointer;
+      border-radius: 4px;
+      background: $pagination-item-bg;
+      padding: 0.375rem 0.75rem;
+      transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &:focus,
+    &:hover {
+      // border-color: $primary-color;
+      transition: all 0.3s;
+      a {
+        color: $primary-color;
+      }
+    }
+
+    &-active {
+      a {
+        background: $pagination-item-bg-active;
+        border-color: $pagination-item-bg-active;
+        border-radius: $pagination-item-radius;
+      }
+    }
+  }
+
+
+  &-prev{
+    margin-right: 8px;
+  }
+  &-prev,
+  &-next
+  {
+    display: inline-block;
+    min-width: $pagination-item-size;
+    padding: calc($pagination-item-spacing / 2);
+    color: rgba(0, 0, 0, 0.85);
+    text-align: center;
+    vertical-align: middle;
+    list-style: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  &-prev,
+  &-next {
+    outline: 0;
+
+    button {
+      color: rgba(0, 0, 0, 0.85);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    &:hover button {
+      border-color: #40a9ff;
+    }
+
+    .rc-pagination-item-link {
+      display: block;
+      width: 100%;
+      height: 100%;
+      font-size: 12px;
+      text-align: center;
+      background-color: $pagination-item-link-bg;
+      border: 1px solid #d9d9d9;
+      border-radius: 2px;
+      outline: none;
+      transition: all 0.3s;
+    }
+
+    &:focus .rc-pagination-item-link,
+    &:hover .rc-pagination-item-link {
+      color: $primary-color;
+      border-color: $primary-color;
+    }
+  }
+
+  &-prev button:after {
+    content: "‹";
+    display: block;
+  }
+
+  &-next button:after {
+    content: "›";
+    display: block;
+  }
+
+  &-disabled {
+    &,
+    &:hover,
+    &:focus {
+      cursor: not-allowed;
+      @include opacity(0);
+      min-width: 0;
+      width: 0;
+      .rc-pagination-item-link {
+        color: lighten($color: #000000, $amount: 25);
+        border-color: #d9d9d9;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  &-slash {
+    margin: 0 10px 0 5px;
+  }
+
+  // &-options {
+  //   display: inline-block;
+  //   margin-left: 16px;
+  //   vertical-align: middle;
+
+  //   // IE11 css hack. `*::-ms-backdrop,` is a must have
+  //   @media all and (-ms-high-contrast: none) {
+  //     *::-ms-backdrop,
+  //     & {
+  //       vertical-align: top;
+  //     }
+  //   }
+
+  //   &-size-changer.rc-select {
+  //     display: inline-block;
+  //     width: auto;
+  //     margin-right: 8px;
+  //   }
+
+  //   &-quick-jumper {
+  //     display: inline-block;
+  //     vertical-align: top;
+
+  //     input {
+  //       width: 50px;
+  //       margin: 0 8px;
+  //     }
+  //   }
+  // }
+
+  &-simple &-prev,
+  &-simple &-next {
+    .rc-pagination-item-link {
+      background-color: transparent;
+      border: 0;
+      &::after {
+        line-height: $pagination-item-size-sm;
+      }
+    }
+  }
+
+  &-simple &-simple-pager {
+    display: flex;
+    align-items: center;
+    // margin-right: 8px;
+    @include font-size(sm);
+    font-weight: 500;
+
+    input {
+      max-width: 32px;
+      position: relative;
+      display: block;
+      text-decoration: none;
+      border: 1px solid $pagination-item-border;
+      cursor: pointer;
+      border-radius: 4px;
+      padding: 0.375rem 0.375rem;
+      text-align: center;
+      transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+      outline: none;
+      box-shadow: none;
+      &:focus {
+        border: 1px solid $pagination-item-border;
+      }
+    }
+  }
+
+  // ============================ Disabled ============================
+  // &-disabled {
+  //   cursor: not-allowed;
+
+  //   .rc-pagination-item {
+  //     background: color-bg(white);
+  //     border-color: #d9d9d9;
+  //     cursor: not-allowed;
+
+  //     a {
+  //       color: lighten($color: #000000, $amount: 25);
+  //       background: transparent;
+  //       border: none;
+  //       cursor: not-allowed;
+  //     }
+
+  //     &-active {
+  //       background: $pagination-item-disabled-bg-active;
+  //       border-color: transparent;
+  //       a {
+  //         color: $pagination-item-disabled-color-active;
+  //       }
+  //     }
+  //   }
+
+  //   .rc-pagination-item-link {
+  //     color: lighten($color: #000000, $amount: 25);
+  //     background: color-bg(black);
+  //     border-color: #d9d9d9;
+  //     cursor: not-allowed;
+  //   }
+
+  //   .rc-pagination-item-link-icon {
+  //     opacity: 0;
+  //   }
+
+  //   .rc-pagination-item-ellipsis {
+  //     opacity: 1;
+  //   }
+  // }
+}
+
+// @media only screen and (max-width: 992px) {
+//   .rc-pagination-item {
+//     &-after-jump-prev,
+//     &-before-jump-next {
+//       display: none;
+//     }
+//   }
+// }
+
+// @media only screen and (max-width: 576px) {
+//   .rc-pagination-options {
+//     display: none;
+//   }
+// }

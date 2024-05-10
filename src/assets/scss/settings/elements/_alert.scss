@@ -1,0 +1,46 @@
+﻿// Alert (core/elements/_alert.scss)
+
+// Background color
+$alert--bg: (
+  bg: get-color(light, 0),
+  bg-outer: rgba(get-color(dark, 0), 0.4),
+  bg-info: rgba(get-color(alert, info), 1),
+  bg-success: rgba(get-color(alert, success), 1),
+  bg-warning: rgba(get-color(alert, warning), 1),
+  bg-error: rgba(get-color(alert, error), 1),
+  bg-confirm: rgba(get-color(light, 0), 1),
+);
+
+$alert--border: (
+  light: get-color(light, 2),
+  info: get-color(alert, info),
+  success: get-color(alert, success),
+  warning: get-color(alert, warning),
+  error: get-color(alert, error),
+  confirm: get-color(light, 2),
+);
+
+$alert--color: (
+  light: get-color(light, 0),
+  quote: get-color(dark, 1),
+  color-question: get-color(primary, 2),
+  color-info: get-color(alert, info),
+  color-success: get-color(alert, success),
+  color-warning:get-color(alert, warning),
+  color-error: get-color(alert, error),
+  color-confirm: rgba(get-color(dark, 0), 1),
+);
+
+// More alert settings
+$alert--min-width: 320px; // alert min-width
+$alert--max-width: 430px; // alert max-width
+$alert--full-width: 1366px; // alert max-width
+$alert--min-height: 100px; // alert min-height
+$alert--padding-v: 8px;
+$alert--padding-h: 16px;
+$alert-radius: 8px;
+
+// Don't change line below!
+$bg--color: map-push($bg--color, $alert--bg);
+$color: map-push($color, $alert--color);
+$border--color: map-push($border--color, $alert--border);

@@ -1,0 +1,14 @@
+﻿
+$primary-color: get-color(primary, 1);
+$pagination-item-bg: get-color(light, 0);
+$pagination-item-border: get-color(dark, 4);
+$pagination-item-size: 24px;
+$pagination-item-size-sm: 24px;
+$pagination-item-radius: 4px;
+$pagination-item-spacing: 8px;
+$pagination-font-weight-active: 500;
+$pagination-item-bg-active: get-color(primary, 4);
+$pagination-item-link-bg: get-color(light, 0);
+$pagination-item-disabled-color-active: get-color(dark, 4);
+$pagination-item-disabled-bg-active: darken(get-color(dark, 0), 10%);
+$pagination-item-input-bg: get-color(light, 0);

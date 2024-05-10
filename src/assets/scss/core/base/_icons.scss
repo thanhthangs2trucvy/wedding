@@ -1,0 +1,24 @@
+// .material-icons {
+//     &--download {
+// 		@extend .material-icons;
+//         &::before {
+// 			background-image: get-icon( 'download', #d95a2b );
+// 		}
+		
+// 		&::after {
+// 			background-image: get-icon( 'download', #fff ); // The ", #fff" isn't strictly necessary.
+// 		}
+		
+//     }
+//     &--browser_update {
+// 		@extend .material-icons;
+//         &::before {
+// 			background-image: get-icon( 'browser_update', #d95a2b );
+// 		}
+		
+// 		&::after {
+// 			background-image: get-icon( 'browser_update', #fff ); // The ", #fff" isn't strictly necessary.
+// 		}
+		
+//     }
+// }

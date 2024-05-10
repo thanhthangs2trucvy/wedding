@@ -1,0 +1,166 @@
+html {
+  box-sizing: border-box;
+
+}
+
+*,
+*:before,
+*:after {
+  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+  box-sizing: inherit;
+}
+
+* {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+body {
+  background: color-bg(
+    white
+  ); 
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden !important;
+  // touch-action: none;
+  // height: 100%;
+  // overflow: hidden;
+  width: 100%;
+  // position: fixed;
+  touch-action: manipulation;
+  @include scrollbars(2px, 4px, get-color(light, 3));
+}
+html,
+body {
+  overscroll-behavior: contain;
+}
+body,
+html {
+  &.is-active,
+  &.js-active,
+  &.show {
+    overflow: hidden;
+    height: 100%;
+  }
+}
+:root {
+  touch-action: pan-x pan-y;
+  height: 100%;
+}
+// #root {
+//   min-width: max-content;
+//   min-height: max-content;
+// }
+hr {
+  border: 0;
+  @include divider();
+  margin-top: $spacing-small;
+  margin-bottom: $spacing-small;
+}
+
+ul,
+ol {
+  margin-top: 0;
+  padding-left: $spacing-small;
+
+  &:not(:last-child) {
+    margin-bottom: $spacing-small;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+ol {
+  list-style: none;
+}
+
+li {
+  &:not(:last-child) {
+    margin-bottom: $spacing-small;
+  }
+}
+
+li > ul,
+li > ol {
+  margin-top: $spacing-small * 0.5;
+  margin-bottom: 0;
+}
+
+dl {
+  margin-top: 0;
+  margin-bottom: $spacing-small;
+}
+
+dt {
+  @include font-weight(strong);
+}
+
+dd {
+  margin-left: $spacing-small;
+  margin-bottom: $spacing-small;
+}
+
+// img {
+//   border-radius: $img-radius;
+// }
+
+img,
+svg,
+video {
+  display: block;
+  height: auto; /* Make sure images are scaled correctly. */
+  max-width: 100%; /* Adhere to container width. */
+}
+
+figure {
+  margin: $spacing-small $spacing-small; /* Extra wide images within figure tags don't overflow the content area. */
+}
+
+figcaption {
+  padding: $spacing-small $spacing-small;
+}
+
+// tables
+table {
+  @include font-size(sm);
+  border-collapse: collapse;
+  margin-bottom: $spacing-small;
+  width: 100%;
+  // @include media("<=large") {
+  //   @include font-size(xxs)
+  // }
+}
+
+tr {
+  border-bottom: 1px solid color-border(divider);
+}
+
+th {
+  @include font-weight(strong);
+  text-align: left;
+}
+
+th,
+td {
+  padding: $spacing-small;
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+  &:last-child {
+    padding-right: 0;
+  }
+}
+
+.invert-color {
+  hr {
+    @include divider(false, inverse);
+  }
+
+  tr {
+    border-bottom: 1px solid color-border(divider-inverse);
+  }
+}

@@ -1,0 +1,502 @@
+// Font Family
+@mixin font-family($elem) {
+  font-family: unquote(get-font-family($elem));
+}
+
+// Font-size + Line-height + Kerning
+@mixin font-size($elem) {
+  font-size: get-font-size($elem);
+  line-height: get-line-height($elem);
+  letter-spacing: get-kerning($elem);
+}
+
+// Font Weight
+@mixin font-weight($elem) {
+  font-weight: get-font-weight($elem);
+}
+
+// Anchor aspect
+@mixin anchor-aspect($type: "main", $layout: false) {
+  @if ($type == "main") {
+    // Base
+    @if ($layout == "inverse") {
+      color: color(link-inverse);
+    } @else {
+      color: color(link);
+    }
+    text-decoration: $link-main--decoration;
+
+    &:hover,
+    &:active {
+      @if ($layout == "inverse") {
+        color: color(link-hover-inverse);
+      } @else {
+        color: color(link-hover);
+      }
+      outline: 0;
+      text-decoration: $link-main--decoration-hover;
+    }
+  } @else if ($type == "header") {
+    @if ($layout == "inverse") {
+      color: color(header-link-inverse);
+    } @else {
+      color: color(header-link);
+    }
+    text-decoration: $link-header--decoration;
+
+    &:hover,
+    &:active {
+      @if ($layout == "inverse") {
+        color: color(header-link-hover-inverse);
+      } @else {
+        color: color(header-link-hover);
+      }
+      text-decoration: $link-header--decoration-hover;
+    }
+  } @else if ($type == "header-mobile") {
+    color: color(header-link-mobile);
+
+    &:hover,
+    &:active {
+      color: color(header-link-mobile-hover);
+    }
+  } @else if ($type == "footer") {
+    @if ($layout == "inverse") {
+      color: color(footer-link-inverse);
+    } @else {
+      color: color(footer-link);
+    }
+    text-decoration: $link-footer--decoration;
+
+    &:hover,
+    &:active {
+      @if ($layout == "inverse") {
+        color: color(footer-link-hover-inverse);
+      } @else {
+        color: color(footer-link-hover);
+      }
+      text-decoration: $link-footer--decoration-hover;
+    }
+  } @else if ($type == "footer-block") {
+    @if ($layout == "inverse") {
+      color: color(footer-block-link-inverse);
+    } @else {
+      color: color(footer-block-link);
+    }
+    text-decoration: $link-footer-block--decoration;
+
+    &:hover,
+    &:active {
+      @if ($layout == "inverse") {
+        color: color(footer-block-link-hover-inverse);
+      } @else {
+        color: color(footer-block-link-hover);
+      }
+      text-decoration: $link-footer-block--decoration-hover;
+    }
+  } @else if ($type == "button-link") {
+    @if ($layout == "inverse") {
+      color: color(button-link-inverse);
+    } @else {
+      color: color(button-link);
+    }
+    text-decoration: $link-button--decoration;
+
+    &:hover,
+    &:active {
+      @if ($layout == "inverse") {
+        color: color(button-link-hover-inverse);
+      } @else {
+        color: color(button-link-hover);
+      }
+      text-decoration: $link-button--decoration-hover;
+    }
+  } @else if ($type == "func-link") {
+    @if ($layout == "inverse") {
+      color: color(func-link-inverse);
+    } @else {
+      color: color(func-link);
+    }
+    text-decoration: $link-func--decoration;
+
+    &:hover,
+    &:active {
+      @if ($layout == "inverse") {
+        color: color(func-link-hover-inverse);
+      } @else {
+        color: color(func-link-hover);
+      }
+      text-decoration: $link-func--decoration-hover;
+    }
+  }
+}
+
+@mixin divider-mix($layout: false) {
+  display: block;
+  height: 1px;
+  @if ($layout == "inverse") {
+    background: color-border(divider-inverse);
+  } @else {
+    background: color-border(divider);
+  }
+}
+
+@mixin divider($type: false, $layout: false) {
+  @if ($type == "before") {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      @include divider-mix($layout);
+    }
+  } @else if ($type == "after") {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      @include divider-mix($layout);
+    }
+  } @else {
+    @include divider-mix($layout);
+  }
+}
+
+@mixin clearFix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+
+  &:after {
+    display: block;
+    clear: both;
+    height: 1px;
+    margin-top: -1px;
+    visibility: hidden;
+  }
+  & {
+    *zoom: 1;
+  }
+}
+@mixin text-hide() {
+  // stylelint-disable-next-line font-family-no-missing-generic-family-keyword
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+@mixin hide($type) {  
+  @if $type == hide-block
+  {
+    display: none !important;
+    visibility: hidden;
+  }
+  
+  @if $type == hide-text
+  {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  @if $type == hide-content
+  {
+    visibility: hidden;
+  }
+  
+  @if $type == hide-image
+  {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+   
+    &:before {
+      content: "";
+      display: block;
+      width: 0;
+      height: 150%;
+    }
+  }
+}
+
+@mixin hover {
+  &:not([disabled]):hover {
+    @content;
+  }
+}
+@mixin hover-active {
+  &:hover {
+    .no-touch & {
+      @content;
+    }
+  }
+  &:active {
+    .touch & {
+      @content;
+    }
+  }
+}
+@mixin border-radius($radius: $border-radius-base) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+}
+
+@mixin border-radii($topleft, $topright, $bottomright, $bottomleft) {
+  border-top-left-radius: $topleft;
+  border-top-right-radius: $topright;
+  border-bottom-right-radius: $bottomright;
+  border-bottom-left-radius: $bottomleft;
+  -webkit-border-top-left-radius: $topleft;
+  -webkit-border-top-right-radius: $topright;
+  -webkit-border-bottom-right-radius: $bottomright;
+  -webkit-border-bottom-left-radius: $bottomleft;
+  -moz-border-radius-topleft: $topleft;
+  -moz-border-radius-topright: $topright;
+  -moz-border-radius-bottomright: $bottomright;
+  -moz-border-radius-bottomleft: $bottomleft;
+}
+
+@mixin scrollbars($size, $radius, $color) {
+  &::-webkit-scrollbar {
+    border-radius: $radius;
+    height: $size * 1.5;
+    width: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $color;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+  & {
+    scrollbar-face-color: $color;
+    scrollbar-track-color: mix($color, white, 50%);
+  }
+}
+
+// no scroll bar
+@mixin no-scroll-bar() {
+  &::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    height: 0;
+    width: 0;
+  }
+
+  &::-webkit-scrollbar-track {
+    height: 0;
+    width: 0;
+  }
+}
+
+// Reset ul li
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// Text truncate
+// Requires inline-block or block for proper styling
+
+@mixin text-truncate() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin center($horizontal: true, $vertical: true) {
+  position: absolute;
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  } @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+@mixin user-select($select) {
+  -webkit-user-select: $select;
+  -moz-user-select: $select;
+  -ms-user-select: $select; // IE10+
+  user-select: $select;
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity = $opacity-ie); //IE8
+}
+
+@mixin position($position, $args) {
+  @each $o in top right bottom left {
+    $i: index($args, $o);
+    @if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number
+    {
+      #{$o}: nth($args, $i + 1);
+    }
+  }
+  position: $position;
+}
+
+// Positioning helpers
+@mixin absolute($args: "") {
+  @include position(absolute, $args);
+}
+
+@mixin fixed($args: "") {
+  @include position(fixed, $args);
+}
+
+@mixin relative($args: "") {
+  @include position(relative, $args);
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+
+  @keyframes #{$name} {
+    @content;
+  }
+}
+@mixin fade($type) {
+  @if $type== "hide" {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.5s, opacity 0.5s;
+  } @else if $type== "show" {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0.5s, opacity 0.5s;
+  }
+}
+
+@mixin ripped-effect($rhythm, $depth) {
+  $tip: calc(100% - #{$depth});
+  $ripped: "100% 0, 100% #{$tip}, ";
+  $end: 100 - $rhythm;
+  $isPrevTip: true;
+
+  @for $i from $end through 1 {
+    @if $i % $rhythm == 0 {
+      @if $isPrevTip {
+        $ripped: #{$ripped + $i + "% 100%, "};
+        $isPrevTip: false;
+      } @else {
+        $ripped: #{$ripped + $i + "% #{$tip}, "};
+        $isPrevTip: true;
+      }
+    }
+  }
+
+  $ripped: #{$ripped + "0 #{$tip}, 0 0"};
+
+  clip-path: polygon($ripped);
+}
+
+@mixin scale_timer($scale) {
+  $x: $scale;
+  width: 50vmin * $x;
+  height: 50vmin * $x;
+  box-shadow: 0 0 0 (1.25vmin * $x),
+    inset (2.5vmin * $x) (2.5vmin * $x) (5vmin * $x) rgba(black, 0.125),
+    (2.5vmin * $x) (2.5vmin * $x) (5vmin * $x) rgba(black, 0.125);
+  font-size: 25vmin * $x;
+  text-shadow: (2.5vmin * $x) (2.5vmin * $x) (5vmin * $x) rgba(black, 0.125);
+}
+
+// scss-docs-end btn-size-mixin
+@mixin box-shadow($__inset:inset,$__horizontaloffset:10px,$__verticaloffset:10px,$blur:10px,$__spread:10px,$__color: #000000) {
+  -webkit-box-shadow: $__inset $__horizontaloffset $__verticaloffset $blur $__spread $__color;
+  -moz-box-shadow: $__inset $__horizontaloffset $__verticaloffset $blur $__spread $__color;
+  box-shadow: $__inset $__horizontaloffset $__verticaloffset $blur $__spread $__color;
+}
+
+@mixin gradient-bg($color: null) {
+  background-color: $color;
+
+  @if $enable-gradients {
+    background-image: var(--#{$variable-prefix}gradient);
+  }
+}
+/// @example
+///   .selector {
+///     @include x-linear-gradient('to bottom', #ccc, #ddd, #bbb);
+///   }
+///
+@mixin x-linear-gradient ($direction: 'to bottom', $fallback: #ccc, $from: #ccc, $to: #aaa) {
+
+	$directions: helper-gradient-angle($direction);
+
+	// Provide a fallback-color
+	background-color: $fallback;
+
+	// Cross-browser linear-gradients
+	background-image: -webkit-gradient(linear, unquote(nth($directions, 2)), from($from), to($to)); // Android 2.1-3.0
+	background-image: -webkit-linear-gradient(unquote(nth($directions, 1)), $from, $to);
+	background-image:         linear-gradient(unquote($direction), $from, $to);
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-center-column {
+  @include flex-center;
+  flex-direction: column;
+}
+
+@mixin flex-center-vert {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-center-horiz {
+  display: flex;
+  justify-content: center;
+}
+
+
+// @mixin gradient($direction, $list) { 
+//   background: -webkit-linear-gradient($direction, $list);
+//   background: -moz-linear-gradient($direction, $list);
+//   background: -o-linear-gradient($direction, $list);
+//   background: linear-gradient($direction, $list);  
+// }

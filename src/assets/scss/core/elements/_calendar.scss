@@ -1,0 +1,101 @@
+﻿.rc-calendar {
+  // border-color: color-border(divider);
+  @include font-family(base);
+  @include font-weight(base);
+  @include font-size(base);
+  &-header {
+    display: flex;
+    padding: 0 8px;
+    color: rgba(0, 0, 0, 0.88);
+    border-bottom: 1px solid rgba(5, 5, 5, 0.06);
+    > div {
+      display: flex;
+      width: 100%;
+    }
+  }
+  &-body {
+    padding: $spacing-small;
+  }
+  &-footer {
+    padding: 0;
+  }
+  &-month-select,
+  &-year-select,
+  &-prev-year-btn,
+  &-next-year-btn,
+  &-prev-month-btn,
+  &-next-month-btn {
+    // position: relative;
+    // left: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.45) !important;
+    // line-height: 1.4;
+    height: 100%;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    transition: color 0.2s;
+    min-width: 1.6em;
+    font-size: 14px;
+  }
+  &-my-select {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex: auto;
+    font-weight: 600;
+    line-height: 40px;
+    > a {
+      margin: 0 calc($spacing-small / 2);
+      color: rgba(0, 0, 0, 0.88) !important;
+    }
+  }
+  &-table {
+    color: rgba(0, 0, 0, 0.88);
+  }
+  &-date {
+    color: rgba(0, 0, 0, 0.88);
+  }
+  &-last-month-cell,
+  &-next-month-btn-day {
+    .rc-calendar-date {
+      color: rgba(0, 0, 0, 0.25);
+      @include user-select(none);
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.04) !important;
+      }
+    }
+  }
+  &-cell {
+    &.rc-calendar-today {
+      .rc-calendar-date {
+        border-color: get-color(primary, 2);
+        background-color: transparent;
+        color: get-color(primary, 2);
+      }
+    }
+    .rc-calendar-date {
+      // background-color: get-color(primary, 2);
+      &:hover {
+        background-color: get-color(primary, 4);
+      }
+    }
+  }
+  &-selected-date {
+    .rc-calendar-date {
+      background-color: get-color(primary, 2);
+      &:hover {
+        background-color: get-color(primary, 3);
+      }
+    }
+  }
+  &-today-btn,
+  &-ok-btn,
+  &-time-picker-btn {
+    color: color(primary) !important;
+    @include font-size(sm);
+    @include font-weight(strong);
+    padding: 0;
+    line-height: 1.2;
+  }
+}

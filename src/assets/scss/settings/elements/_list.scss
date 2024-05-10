@@ -1,0 +1,53 @@
+﻿
+// Background color
+$list--bg: (
+	dark: get-color(dark, 1),
+  light: get-color(light, 0),
+  info: 	get-color(alert, info),
+  success: 	get-color(alert, success),
+  warning: get-color(alert, warning),
+  error: 	get-color(alert, error),
+);
+
+$list--border: (
+  dark: get-color(dark, 1),
+  light: get-color(light, 1),
+  info: 	get-color(alert, info),
+  success: 	get-color(alert, success),
+  warning: get-color(alert, warning),
+  error: 	get-color(alert, error),
+);
+
+$list--color: (
+  dark: get-color(dark, 1),
+  light: get-color(light, 1),
+  info: 	get-color(alert, info),
+  success: 	get-color(alert, success),
+  warning: get-color(alert, warning),
+  error: 	get-color(alert, error),
+);
+
+$list--size: (
+  header: "epsilon",
+  text: "theta",
+  tabline: "tabline"
+);
+
+$list--weight: (
+  header: 600,
+);
+
+// More list settings
+$list--min-width:			 		null;
+$list--max-width:			 		520px;	
+$list--max-width:			 		520px;
+$list--padding-v:			 		16px;
+$list--padding-h:			 		16px;
+$list--button-radius:	    4px;
+
+// Don't change line below!
+$bg--color: map-push($bg--color, $list--bg);
+$color: map-push($color, $list--color);
+$border--color: map-push($border--color, $list--border);
+$font--size: map-push($font--size, $list--size);
+$font--weight: map-push($font--weight, $list--weight);

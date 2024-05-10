@@ -1,0 +1,15 @@
+.main {
+  min-height: 100vh;
+  @include x-linear-gradient("to bottom", color(white), color(white), get-color(secondary, 4));
+  &.is-header {
+    padding-top: 56px;
+  }
+  &.is-bottom {
+    padding-bottom: 70px;
+  }
+  .section-block {
+    &:not(:last-child) {
+      margin-bottom: $spacing;
+    }
+  }
+}

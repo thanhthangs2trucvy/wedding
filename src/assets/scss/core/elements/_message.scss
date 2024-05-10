@@ -1,0 +1,111 @@
+﻿.message {
+  @extend .modal;
+  &.is-active,
+  &.js-active,
+  &.show {
+    .message-content {
+      -webkit-animation: slide-in-blurred-bottom 0.6s
+        cubic-bezier(0.23, 1, 0.32, 1) both;
+      animation: slide-in-blurred-bottom 0.6s cubic-bezier(0.23, 1, 0.32, 1)
+        both;
+    }
+  }
+  &-mask {
+    @extend .modal-mask;
+  }
+  &-container {
+    @extend .modal-container;
+    max-width: 480px;
+  }
+  &-content {
+    position: relative;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 0;
+    border-radius: $border-radius-base;
+    box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08),
+      0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+    pointer-events: auto;
+    padding: $spacing calc($spacing + 4px);
+  }
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1vw;
+    .icon {
+      max-width: 76px;
+      width: 100%;
+    }
+  }
+  &-body {
+    @include font-size(base);
+    word-wrap: break-word;
+    h5,
+    h6,
+    p {
+      text-align: center;
+      margin: 0;
+      @include user-select(none);
+      &:not(:last-child) {
+        margin-bottom: $spacing-small;
+      }
+    }
+  }
+  &-footer {
+    // text-align: end;
+    background: 0 0;
+    text-align: center;
+    margin-top: 2vw;
+    display: flex;
+    justify-content: center;
+  }
+  &-title {
+    @include user-select(none);
+    &-image {
+      width: 100%;
+      margin-bottom: $spacing-small;
+      @include user-select(none);
+    }
+  }
+  &-btn {
+    min-width: 120px;
+    text-align: center;
+    justify-content: center;
+    @extend .btn-primary;
+    font-weight: 700;
+    @include user-select(none);
+  }
+  &-success {
+    .message {
+      &-header {
+        .icon {
+          color: color(success);
+        }
+      }
+      &-body {
+        // color: color(success);
+      }
+      &-title {
+        @include font-size(h3);
+        // color: color(success);
+      }
+    }
+  }
+  &-error {
+    .message {
+      &-header {
+        .icon {
+          color: color(error);
+        }
+      }
+      &-body {
+        color: color(error);
+      }
+      &-title {
+        @include font-size(h3);
+        color: color(error);
+      }
+    }
+  }
+}

@@ -1,0 +1,241 @@
+﻿// Table
+table {
+  background-color: $table-bg;
+
+  // Table cell sizing
+  //
+  // Reset default table behavior
+
+  col[class*="col-"] {
+    position: static; // Prevent border hiding in Firefox and IE9-11 (see https://github.com/twbs/bootstrap/issues/11623)
+    display: table-column;
+    float: none;
+  }
+
+  td,
+  th {
+    &[class*="col-"] {
+      position: static; // Prevent border hiding in Firefox and IE9-11 (see https://github.com/twbs/bootstrap/issues/11623)
+      display: table-cell;
+      float: none;
+    }
+  }
+}
+
+caption {
+  padding-top: $table-cell-padding;
+  padding-bottom: $table-cell-padding;
+  color: color(disabled);
+  text-align: left;
+}
+
+th {
+  text-align: left;
+}
+
+// Baseline styles
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  // margin-bottom: $table-spacing;
+  border-radius: $table-radius $table-radius 0 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  // display: block;
+  // > thead, >tbody {
+  //   display: block;
+  // }
+  // Cells
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        padding: $table-cell-padding * 3;
+        line-height: 1.2;
+        vertical-align: middle;
+        border-top: 1px solid $table-border-color;
+      }
+    }
+  }
+  // Bottom align for column headings
+   thead > tr > th {
+    vertical-align: bottom;
+    border-bottom: none;
+    position: relative;
+    user-select: none;
+    &:not(:last-child):not([colspan]):before {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 1px;
+      height: 70%;
+      background-color: $table-divider;
+      transform: translateY(-50%);
+      transition: background-color 0.3s;
+      content: "";
+    }
+  }
+  // Remove top border from thead by default
+  > caption + thead,
+  > colgroup + thead,
+  > thead:first-child {
+    > tr:first-child {
+      > th,
+      > td {
+        border-top: 0;
+      }
+    }
+  }
+  // Account for multiple tbody instances
+  > tbody + tbody {
+    border-top: none;
+  }
+  
+  // hover
+  > tbody > tr:hover {
+    background-color: $table-bg-hover;
+  }
+
+  // Nesting
+  .table {
+    background-color: $table-bg-accent;
+    // display: block;
+    &-row {
+      position: relative;
+      @include user-select(none);
+      &.row-disabled {
+        @include user-select(none);
+        pointer-events: none;
+        cursor: not-allowed;
+      }
+    }
+  }
+  .table-placeholder {
+    text-align: center;
+    @include user-select(none)
+  }
+  &-cell-ellipsis {
+    @include text-truncate();
+  }
+}
+
+// Condensed table w/ half padding
+
+.table-condensed {
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        padding: $table-condensed-cell-padding;
+      }
+    }
+  }
+}
+
+// Bordered version
+//
+// Add borders all around the table and between all the columns.
+
+.table-bordered {
+  border: 1px solid $table-border-color;
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        border: 1px solid $table-border-color;
+      }
+    }
+  }
+  > thead > tr {
+    > th,
+    > td {
+      border-bottom-width: 2px;
+    }
+  }
+}
+
+.table-fixed-header {
+  margin-bottom: $table-spacing;
+  border-radius: $table-radius $table-radius 0 0;
+  .table {
+    margin-bottom: 0;
+    &-container {
+      overflow: hidden;
+    }
+    &-header {
+      overflow: hidden;
+      > table {
+        margin-bottom: 2px;
+      }
+    }
+    &-footer {
+      padding: 0 $spacing-small;
+      span {
+        line-height: 1;
+        @include font-size(xs);
+        font-weight: 600;
+      }
+    }
+    &-body {
+      @include scrollbars(2px, 4px, get-color(light, 3));
+    }
+  }
+}
+
+// Zebra-striping
+//
+// Default zebra-stripe styles (alternating gray and transparent backgrounds)
+
+.table-striped {
+  > tbody > tr:nth-of-type(odd) {
+    background-color: $table-bg-accent;
+  }
+}
+
+// Hover effect
+//
+// Placed here since it has to come after the potential zebra striping
+
+.table-hover {
+  > tbody > tr:hover {
+    background-color: $table-bg-hover;
+  }
+}
+
+.table-pagination {
+  vertical-align: middle;
+  display: flex;
+  justify-content: space-between;
+  // @include clearFix();
+  &-left {
+    text-align: left;
+  }
+  &-center {
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+  &-right {
+    text-align: right;
+  }
+}
+
+.table-bottom {
+  // display: flex;
+  // justify-content: space-between;
+  // position: absolute;
+  // bottom: 0;
+  // left: 0;
+  // right: 0;
+  // width: 100%;
+  // // background-color: get-color(light, 2);
+  // padding: $table-spacing;
+}

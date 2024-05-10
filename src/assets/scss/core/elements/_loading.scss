@@ -1,0 +1,44 @@
+﻿.loading {
+  @extend .modal;
+  &-mask {
+    @extend .modal-mask;
+    // background-color: rgba(0, 0, 0, 0.95) !important;
+  }
+  &-inner {
+    @extend .modal-container;
+    max-width: 200px !important;
+    .loader {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.4s;
+      padding: 0.5rem;
+      div {
+        // margin-left: 0.8rem;
+        color: transparent;
+        margin: 0.2rem;
+      }
+
+      .box-load1 {
+        animation: brighten 1.5s infinite;
+      }
+
+      .box-load2 {
+        animation: brighten 1.5s infinite;
+        animation-delay: 0.3s;
+      }
+
+      .box-load3 {
+        animation: brighten 1.5s infinite;
+        animation-delay: 0.6s;
+      }
+
+      @keyframes brighten {
+        100% {
+          color: white;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}

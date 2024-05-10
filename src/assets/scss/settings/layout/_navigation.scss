@@ -1,0 +1,15 @@
+﻿// navigation (core/layout/_navigation.scss)
+
+// Background color
+$navigation--bg: (
+	navigation: 		darken(get-color(primary,2), 10%),
+);
+
+// More navigation settings
+$navigation-height: 		58px;		// header height (mobile)
+$navigation-nav--padding-h: 		16px;		// horizontal padding between navigation links (desktop)
+$navigation-nav--padding-v: 		8px;		// horizontal padding between navigation links (desktop)
+$navigation-border: 		4px;		// horizontal padding between navigation links (desktop)
+
+// Don't change line below!
+$bg--color: map-push($bg--color, $navigation--bg);

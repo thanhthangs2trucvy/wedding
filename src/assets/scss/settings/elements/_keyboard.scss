@@ -1,0 +1,28 @@
+﻿// Keyboard (core/elements/_keyboard.scss)
+
+// Background color
+$keyboard--bg: (
+	bg: get-color(light, 0),
+  press: get-color(dark, 1)
+);
+
+$keyboard--color: (
+  keyboard: get-color(dark,1)
+);
+
+$keyboard--border: (
+  dark: get-color(light, 3)
+);
+
+// More modal settings
+$keyboard--key-width: 60px;
+$keyboard-full--key-width: calc(100% / 5);
+$keyboard--key-height: 60px;
+$keyboard--full-width: 1366px;		// modal max-width
+$keyboard--padding: 8px;
+$keyboard-radius: 4px;
+
+// Don't change line below!
+$bg--color: map-push($bg--color, $keyboard--bg);
+$color: map-push($color, $button--color);
+$border--color: map-push($border--color, $keyboard--border);

@@ -1,0 +1,14 @@
+﻿// Message (core/layout/_message.scss)
+
+// Background color
+$message--bg: (
+	bg: get-color(light, 0)
+);
+
+// More header settings
+$message-height__mobile: 		40px;		// message height (mobile)
+$message-height__desktop: 		45.85px;		// message height (desktop)
+
+
+// Don't change line below!
+$bg--color: map-push($bg--color, $message--bg);

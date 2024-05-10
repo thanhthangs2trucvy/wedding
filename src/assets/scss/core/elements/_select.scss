@@ -1,0 +1,27 @@
+﻿.react-select {
+  &-container {
+  }
+  &__control {
+    display: block;
+    border-radius: $form--radius;
+    color: color(input);
+    box-shadow: none;
+    max-width: 100%;
+    width: 100%;
+  }
+  &__value-container {
+    @include font-size(sm);
+    @include font-weight(input);
+    padding: calc($spacing-small / 2) $spacing-small calc($spacing-small / 2) calc($spacing-small * 1.4) !important;
+  }
+  &__indicators {
+  }
+  &__menu {
+    @include font-size(sm);
+    @include font-weight(input);
+  }
+  &__menu-list {
+  }
+  &__option {
+  }
+}

@@ -1,0 +1,520 @@
+﻿// Keypad
+// .Keypad-full {
+//   &-wrapper {
+//     @include reset-list();
+//     background-color: color-bg(bg);
+//     border-radius: $keyboard-radius;
+//     box-sizing: border-box;
+//     // font-family: HelveticaNeue-Light, Helvetica Neue Light, Helvetica Neue,
+//     //   Helvetica, Arial, Lucida Grande, sans-serif;
+//     @include font-family(base);
+//     overflow: hidden;
+//     padding: 5px;
+//     touch-action: manipulation;
+//     -webkit-user-select: none;
+//     -moz-user-select: none;
+//     -ms-user-select: none;
+//     user-select: none;
+//     width: 100%;
+
+//     &--show {
+//       display: block;
+//     }
+//   }
+//   &__key {
+//     display: block;
+//     float: left;
+//     text-align: center;
+//     width: calc(100% / 5);
+//     padding: $keyboard--padding;
+//     height: $keyboard--key-height;
+
+//     &--enter {
+//       width: calc(100% * 2 / 5);
+//       float: right;
+//       height: calc($keyboard--key-height * 2);
+//     }
+//     &--shift,
+//     &--00,
+//     &--del,
+//     &--clear {
+//       width: calc(100% * 2 / 5);
+//     }
+//     &--space {
+//       width: calc(100% * 6 / 5);
+//     }
+//     &--del {
+//       .btn {
+//         // font-size: $font-size * 1.3;
+//         &:before {
+//           font-family: "Material Icons";
+//           content: "\e14a";
+//           position: absolute;
+//           @include center();
+//         }
+//       }
+//     }
+//     > button[data-pressed] {
+//       background: color-bg(pressed);
+//       color: color(keyboard);
+//       position: relative;
+//       top: 0.2em;
+//       box-shadow: 0 0 0 0 rgb(0 0 0 / 30%) !important;
+//     }
+//   }
+//   &__button {
+//     @extend .btn;
+//     // background: #fff !important;
+//     // border-bottom: 1px solid #b5b5b5 !important;
+//     // border-radius: 5px !important;
+//     // box-shadow: 0 2px 0 0 rgb(0 0 0 / 30%) !important;
+//     // cursor: pointer;
+//     // height: 100% !important;
+//     // width: 100% !important;
+//     // transition: all 0.1s;
+
+//     // @include hover {
+//     //   background: #efefef !important;
+//     // }
+//     // &[data-pressed],
+//     // &:active {
+//     //   background: #2a2a2a;
+//     //   color: #aaa;
+//     //   position: relative;
+//     //   top: 0.2em;
+//     //   box-shadow: 0 0 0 0 rgb(0 0 0 / 30%) !important;
+//     // }
+//   }
+// }
+
+// .keyboard-full {
+//   &-wrapper {
+//     @include reset-list();
+//     background-color: color-bg(bg);
+//     border-radius: $keyboard-radius;
+//     box-sizing: border-box;
+//     // font-family: HelveticaNeue-Light, Helvetica Neue Light, Helvetica Neue,
+//     //   Helvetica, Arial, Lucida Grande, sans-serif;
+//     @include font-family(base);
+//     overflow: hidden;
+//     // padding: 5px;
+//     touch-action: manipulation;
+//     -webkit-user-select: none;
+//     -moz-user-select: none;
+//     -ms-user-select: none;
+//     user-select: none;
+//     width: 100%;
+
+//     &--show {
+//       display: block;
+//     }
+//   }
+//   &__key {
+//     position: relative;
+//     display: block;
+//     float: left;
+//     text-align: center;
+//     padding: calc($keyboard--padding / 2);
+//     margin-bottom: 0 !important;
+
+//     &--del {
+//       float: right;
+//     }
+//     &--del {
+//       .btn {
+//         @include font-size(h4);
+//         &:before {
+//           font-family: "Material Icons";
+//           content: "\e14a";
+//           position: absolute;
+//           @include center();
+//         }
+//       }
+//     }
+//     > button[data-pressed] {
+//       background: color-bg(press);
+//       color: #aaa;
+//       position: relative;
+//       top: 0.2em;
+//       box-shadow: 0 0 0 0 rgb(0 0 0 / 30%) !important;
+//     }
+//   }
+//   &__button {
+//     @extend .btn;
+//     @include font-size(base);
+//     padding: $keyboard--padding;
+//     background: color-bg(bg) !important;
+//     border-bottom: 1px solid color-border(dark) !important;
+//     border-radius: 5px !important;
+//     box-shadow: 0 2px 0 0 rgb(0 0 0 / 30%) !important;
+//     cursor: pointer;
+//     height: 100% !important;
+//     width: 100% !important;
+//     transition: all 0.1s;
+
+//     @include hover {
+//       background: #efefef !important;
+//     }
+//     &[data-pressed],
+//     &:active {
+//       background: #2a2a2a;
+//       color: #aaa;
+//       position: relative;
+//       top: 0.2em;
+//       box-shadow: 0 0 0 0 rgb(0 0 0 / 30%) !important;
+//     }
+//   }
+// }
+
+/*!
+ * 
+ *   react-simple-keyboard v3.4.176
+ *   https://github.com/hodgef/react-simple-keyboard
+ *
+ *   Copyright (c) Francisco Hodge (https://github.com/hodgef) and project contributors.
+ *
+ *   This source code is licensed under the MIT license found in the
+ *   LICENSE file in the root directory of this source tree.
+ *
+ */
+/*!
+ * 
+ *   simple-keyboard v3.4.128
+ *   https://github.com/hodgef/simple-keyboard
+ *
+ *   Copyright (c) Francisco Hodge (https://github.com/hodgef) and project contributors.
+ *
+ *   This source code is licensed under the MIT license found in the
+ *   LICENSE file in the root directory of this source tree.
+ *
+ */
+.hg-theme-default {
+  background-color: #ececec;
+  border-radius: 5px;
+  box-sizing: border-box;
+  // font-family: HelveticaNeue-Light, Helvetica Neue Light, Helvetica Neue,
+  //   Helvetica, Arial, Lucida Grande, sans-serif;
+  @include font-family(base);
+  font-weight: 500;
+  overflow: hidden;
+  padding: 5px;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 100%;
+}
+.hg-theme-default .hg-button span {
+  pointer-events: none;
+}
+.hg-theme-default button.hg-button {
+  border-width: 0;
+  font-size: inherit;
+  outline: 0;
+}
+.hg-theme-default .hg-button {
+  display: inline-block;
+  flex-grow: 1;
+}
+.hg-theme-default .hg-row {
+  display: flex;
+}
+.hg-theme-default .hg-row:not(:last-child) {
+  margin-bottom: 5px;
+}
+.hg-theme-default .hg-row .hg-button:not(:last-child) {
+  margin-right: 5px;
+}
+.hg-theme-default .hg-row .hg-button-container {
+  margin-right: 0;
+}
+.hg-theme-default .hg-row > div:last-child {
+  margin-right: 0;
+}
+.hg-theme-default .hg-row .hg-button-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  width: calc(100% / 4 * 3);
+  [data-skbtn="0"],
+  [data-skbtn="{space}"] {
+    width: 100% !important;
+    margin-top: 8px;
+    margin-right: 8px;
+  }
+}
+.hg-theme-default .hg-button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid #b5b5b5;
+  border-radius: 5px;
+  box-shadow: 0 0 3px -1px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  height: 44px;
+  justify-content: center;
+  padding: 5px;
+}
+.hg-theme-default .hg-button.hg-standardBtn {
+  width: 20px;
+}
+.hg-theme-default .hg-button.hg-activeButton {
+  background: #efefef;
+}
+.hg-theme-default.hg-layout-numeric .hg-button {
+  align-items: center;
+  display: flex;
+  height: 60px;
+  justify-content: center;
+  width: 33.3%;
+}
+.hg-theme-default .hg-button.hg-button-numpadadd,
+.hg-theme-default .hg-button.hg-button-numpadenter {
+  height: 85px;
+}
+.hg-theme-default .hg-button.hg-button-numpad0 {
+  width: 105px;
+}
+.hg-theme-default .hg-button.hg-button-com {
+  max-width: 85px;
+}
+.hg-theme-default .hg-button.hg-button-lock {
+  max-width: 105px;
+}
+.hg-theme-default .hg-button.hg-button-space {
+  @include text-hide();
+  background-color: get-color(light, 0);
+  border-bottom: 1px solid #b5b5b5;
+}
+.hg-theme-default .hg-button.hg-button-enter {
+  max-width: 220px;
+  @extend .btn-primary;
+  span {
+    @include text-hide();
+  }
+  &::before {
+    content: "";
+    // @include absolute(center);
+    width: 28px;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"%3E%3Cpath fill="white" d="M21 4a1 1 0 0 1 .993.883L22 5v6.5a3.5 3.5 0 0 1-3.308 3.495L18.5 15H5.415l3.292 3.293a1 1 0 0 1 .083 1.32l-.083.094a1 1 0 0 1-1.32.083l-.094-.083l-5-5a1.011 1.011 0 0 1-.097-.112l-.071-.11l-.054-.114l-.035-.105l-.025-.117l-.007-.06L2 14l.003-.075l.017-.126l.03-.111l.044-.111l.052-.098l.064-.092l.083-.094l5-5a1 1 0 0 1 1.497 1.32l-.083.094L5.415 13H18.5a1.5 1.5 0 0 0 1.493-1.355L20 11.5V5a1 1 0 0 1 1-1Z"%2F%3E%3C%2Fsvg%3E');
+  }
+  &.customBtn {
+    height: calc(38px * 2 + 8px);
+    width: 31%;
+    flex-grow: 0;
+  }
+}
+.hg-theme-default .hg-button.hg-button-bksp {
+  position: relative;
+  span {
+    @include text-hide();
+  }
+  &::before {
+    content: "";
+    // @include absolute(center);
+    width: 28px;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="1.13em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 576 512"%3E%3Cpath fill="%23003f9a" d="M576 128c0-35.3-28.7-64-64-64H205.3c-17 0-33.3 6.7-45.3 18.7L9.4 233.4c-6 6-9.4 14.1-9.4 22.6s3.4 16.6 9.4 22.6L160 429.3c12 12 28.3 18.7 45.3 18.7H512c35.3 0 64-28.7 64-64V128zm-305 47c9.4-9.4 24.6-9.4 33.9 0l47 47l47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47l47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47l-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47l-47-47c-9.4-9.4-9.4-24.6 0-33.9z"%2F%3E%3C%2Fsvg%3E');
+  }
+}
+.hg-theme-default .hg-button.hg-standardBtn.hg-button-at {
+  max-width: 45px;
+}
+.hg-theme-default .hg-button.hg-selectedButton {
+  background: rgba(5, 25, 70, 0.53);
+  color: #fff;
+}
+.hg-theme-default .hg-button.hg-standardBtn[data-skbtn=".com"] {
+  max-width: 82px;
+}
+.hg-theme-default .hg-button.hg-standardBtn[data-skbtn="@"] {
+  max-width: 60px;
+}
+.hg-candidate-box {
+  background: #ececec;
+  border-bottom: 2px solid #b5b5b5;
+  border-radius: 5px;
+  display: inline-flex;
+  margin-top: -10px;
+  max-width: 272px;
+  position: absolute;
+  transform: translateY(-100%);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+ul.hg-candidate-box-list {
+  display: flex;
+  flex: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+li.hg-candidate-box-list-item {
+  align-items: center;
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  width: 40px;
+}
+li.hg-candidate-box-list-item:hover {
+  background: rgba(0, 0, 0, 0.03);
+  cursor: pointer;
+}
+li.hg-candidate-box-list-item:active {
+  background: rgba(0, 0, 0, 0.1);
+}
+.hg-candidate-box-prev:before {
+  content: "◄";
+}
+.hg-candidate-box-next:before {
+  content: "►";
+}
+.hg-candidate-box-next,
+.hg-candidate-box-prev {
+  align-items: center;
+  background: #d0d0d0;
+  color: #969696;
+  cursor: pointer;
+  display: flex;
+  padding: 0 10px;
+}
+.hg-candidate-box-next {
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.hg-candidate-box-prev {
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+.hg-candidate-box-btn-active {
+  color: #444;
+}
+
+// KEYBOARD FULL
+
+.keyboard-full {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 5px;
+  .hg-theme-default .hg-button {
+    box-shadow: none;
+  }
+  .simple-keyboard.hg-theme-default {
+    display: inline-block;
+  }
+
+  .keyboard-full-main.simple-keyboard {
+    width: 70%;
+    // min-width: 640px;
+    background: none;
+  }
+
+  .numPad {
+    width: 30%;
+    display: flex;
+    // align-items: flex-end;
+    .keyboard-full-numpad {
+      width: 75%;
+      height: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .keyboard-full-numpadEnd {
+      width: 25%;
+      height: 100%;
+      .hg-rows {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .hg-row {
+        height: 50%;
+      }
+      .hg-button {
+        height: 100%;
+      }
+    }
+  }
+  .hg-button-backspace {
+    background-color: get-color(alert, error);
+    span {
+      @include text-hide();
+    }
+    &::before {
+      content: "";
+      // @include absolute(center);
+      width: 28px;
+      height: 28px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+      background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="white" d="M22 3H7c-.69 0-1.23.35-1.59.88L.37 11.45c-.22.34-.22.77 0 1.11l5.04 7.56c.36.52.9.88 1.59.88h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-3.7 13.3a.996.996 0 0 1-1.41 0L14 13.41l-2.89 2.89a.996.996 0 1 1-1.41-1.41L12.59 12L9.7 9.11a.996.996 0 1 1 1.41-1.41L14 10.59l2.89-2.89a.996.996 0 1 1 1.41 1.41L15.41 12l2.89 2.89c.38.38.38 1.02 0 1.41z"%2F%3E%3C%2Fsvg%3E')
+    }
+  }
+
+  .hg-button.hg-button-enter {
+     &::before {
+      background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="white" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5A6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14z"%2F%3E%3C%2Fsvg%3E')
+     }
+  }
+
+  // .simple-keyboard-numpad.simple-keyboard {
+  //   background: none;
+  // }
+
+  // .simple-keyboard-numpad.simple-keyboard {
+  //   // width: 160px;
+  // }
+
+  // .simple-keyboard-numpad.simple-keyboard .hg-button {
+  //   // width: 50px;
+  //   justify-content: center;
+  //   display: flex;
+  //   align-items: center;
+  // }
+
+  // .simple-keyboard-numpadEnd.simple-keyboard {
+  //   // width: 50px;
+  //   background: none;
+  //   margin: 0;
+  //   padding: 5px 5px 5px 0;
+  // }
+
+  // .simple-keyboard-numpadEnd.simple-keyboard .hg-button {
+  //   align-items: center;
+  //   justify-content: center;
+  //   display: flex;
+  // }
+
+  // .simple-keyboard-numpadEnd .hg-button.hg-standardBtn.hg-button-plus {
+  //   // height: 85px;
+  // }
+
+  // .simple-keyboard-numpadEnd.simple-keyboard .hg-button.hg-button-enter {
+  //   // height: 85px;
+  // }
+
+  // .simple-keyboard.hg-theme-default .hg-button.hg-selectedButton {
+  //   background: rgba(5, 25, 70, 0.53);
+  //   color: white;
+  // }
+
+  // .hg-button.hg-functionBtn.hg-button-space {
+  //   // width: 350px;
+  // }
+}
