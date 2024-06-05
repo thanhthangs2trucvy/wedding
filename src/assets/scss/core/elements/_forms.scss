@@ -569,7 +569,7 @@ textarea.form-input {
 }
 
 .form-hint {
-  @include font-size(hint);
+  @include font-size(base);
   margin-top: calc($form-hint--margin / 2);
   @include user-select(none);
   font-style: italic;

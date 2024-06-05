@@ -268,3 +268,9 @@ export const useAxiosFunction = () => {
 
   return { response, error, loading, axiosFetch };
 }
+
+export const useClickAnywhere = (handler) => {
+  useEventListener('click', event => {
+    handler(event)
+  })
+};

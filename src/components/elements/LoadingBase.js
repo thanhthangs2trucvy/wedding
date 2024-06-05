@@ -6,7 +6,12 @@ export const LoadingSuspense = () => {
   return (
     <div className="loading-suspense">
       <div className="loading-inner">
-        <Image src={require('assets/images/pictures/loading.png')} />
+        <Image src={require('assets/images/pictures/loading.webp')} />
+        <div className="loader">
+          <div className="box-load1"><Icon name="heart" /></div>
+          <div className="box-load2"><Icon name="heart" /></div>
+          <div className="box-load3"><Icon name="heart" /></div>
+        </div>
       </div>
     </div>
   );
@@ -38,9 +43,3 @@ export const LoadingBase = () => {
     </div>
   );
 };
-
-// export const LoadingCircleBounce = () => {
-//   return (
-//     <div className="sk-circle-bounce"></div>
-//   )
-// }

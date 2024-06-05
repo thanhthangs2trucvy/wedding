@@ -42,3 +42,15 @@
     }
   }
 }
+.loading-suspense {
+  @extend .modal;
+  width: 100vw !important;
+  height: 100vh !important;
+  opacity: 1 !important;
+  background-color: #ffffff;
+  .loader {
+    > div {
+      color: color(error);
+    }
+  }
+}

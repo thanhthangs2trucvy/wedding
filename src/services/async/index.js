@@ -5,14 +5,14 @@ import { handleErrorAxios, handleResponseAxios } from 'services/helpers';
 function getHeader(token, key) {
   if (key) {
     return {
-      'Access-Control-Allow-Origin': '*',
+      // 'Access-Control-Allow-Origin': '*',
       'Content-Type': 'multipart/form-data',
       [key] : token
     }
   }
   
   return {
-    'Access-Control-Allow-Origin': '*',
+    // 'Access-Control-Allow-Origin': '*',
     'Content-Type': 'multipart/form-data',
     'Authorization': token ? 'Bearer ' + token : null,
   }

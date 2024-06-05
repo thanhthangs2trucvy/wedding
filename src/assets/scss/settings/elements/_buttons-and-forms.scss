@@ -43,7 +43,7 @@ $button--border: (
   button-default: lighten(get-color(dark, 0), 50%),
   button-light: get-color(light, 2),
   // button-light is default (.button), so if it's transparent you can set all other values to null
-  button-light-hover: null,
+    button-light-hover: null,
   button-dark: null,
   button-dark-hover: null,
   button-primary: lighten(get-color(primary, 2), 5%),
@@ -86,7 +86,7 @@ $form--color: (
   label: get-color(dark, 1),
   check-radio: get-color(light, 2),
   // ↓ Inverted colors
-  input-inverse: get-color(dark, 3),
+    input-inverse: get-color(dark, 3),
   input-placeholder-inverse: null,
   label-inverse: get-color(dark, 3),
   check-radio-inverse: get-color(dark, 3),
@@ -103,7 +103,7 @@ $form--bg: (
   range-track: get-color(light, 2),
   range-thumb: get-color(primary, 1),
   // ↓ Inverted colors
-  input-inverse: null,
+    input-inverse: null,
   input-focus-inverse: null,
   input-disabled-inverse: darken(get-color(light, 1), 4%),
   check-radio-checked-inverse: null,
@@ -120,7 +120,7 @@ $form--border: (
   input-focus: get-color(primary, 1),
   input-disabled: get-color(light, 3),
   // ↓ Inverted colors
-  input-inverse: darken(get-color(light, 1), 4%),
+    input-inverse: darken(get-color(light, 1), 4%),
   input-hover-inverse: null,
   input-focus-inverse: get-color(primary, 1),
   input-disabled-inverse: null,
@@ -131,7 +131,7 @@ $form--icon: (
   select-arrow: get-color(light, 1),
   range: get-color(light, 1),
   // ↓ Inverted colors
-  select-arrow-inverse: get-color(dark, 3),
+    select-arrow-inverse: get-color(dark, 3),
   range-inverse: get-color(light, 1),
 );
 
@@ -140,7 +140,7 @@ $form--size: (
   input: "eta",
   label: "eta",
   check-radio: "eta",
-  hint: "theta",
+  hint: "eta",
 );
 
 // Forms: font weight
