@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/wedding/static/css/main.59c8b495.css",
-    "main.js": "/wedding/static/js/main.b5ca2faf.js",
-    "static/js/121.4755609c.chunk.js": "/wedding/static/js/121.4755609c.chunk.js",
+    "main.css": "/wedding/static/css/main.6a5dff16.css",
+    "main.js": "/wedding/static/js/main.0266ea56.js",
+    "static/js/121.7461ad9b.chunk.js": "/wedding/static/js/121.7461ad9b.chunk.js",
     "reactPlayerYouTube.js": "/wedding/static/js/reactPlayerYouTube.2b696570.chunk.js",
     "reactPlayerSoundCloud.js": "/wedding/static/js/reactPlayerSoundCloud.9c080b91.chunk.js",
     "reactPlayerVimeo.js": "/wedding/static/js/reactPlayerVimeo.01b78554.chunk.js",
@@ -17,8 +17,8 @@
     "reactPlayerKaltura.js": "/wedding/static/js/reactPlayerKaltura.2fbdd32a.chunk.js",
     "reactPlayerFilePlayer.js": "/wedding/static/js/reactPlayerFilePlayer.ad87b71d.chunk.js",
     "reactPlayerPreview.js": "/wedding/static/js/reactPlayerPreview.5b3a7876.chunk.js",
-    "static/css/462.f8fb6004.chunk.css": "/wedding/static/css/462.f8fb6004.chunk.css",
-    "static/js/462.93595ad6.chunk.js": "/wedding/static/js/462.93595ad6.chunk.js",
+    "static/css/774.9abddc89.chunk.css": "/wedding/static/css/774.9abddc89.chunk.css",
+    "static/js/774.f8afa416.chunk.js": "/wedding/static/js/774.f8afa416.chunk.js",
     "static/media/sound-1.mp3": "/wedding/static/media/sound-1.fd07355541c44a215042.mp3",
     "static/media/1NHA2786.webp": "/wedding/static/media/1NHA2786.8dea9374edc37ea1c12a.webp",
     "static/media/PlayfairDisplay-Regular.woff": "/wedding/static/media/PlayfairDisplay-Regular.9c1d98b0da43401d25f4.woff",
@@ -33,16 +33,15 @@
     "static/media/1NHA2416.webp": "/wedding/static/media/1NHA2416.c066809d45b084b9805c.webp",
     "static/media/4e37162a-1813-47ec-84aa-93c6a449996b.webp": "/wedding/static/media/4e37162a-1813-47ec-84aa-93c6a449996b.c8ed58c4114dde9a85bf.webp",
     "static/media/1NHA2450.webp": "/wedding/static/media/1NHA2450.db36532ee9d0daa46c05.webp",
-    "static/media/qrcode-2.webp": "/wedding/static/media/qrcode-2.c7fefa245c3682daf1e2.webp",
     "static/media/1NHA2424.webp": "/wedding/static/media/1NHA2424.1ecd5417284067b5c8da.webp",
     "static/media/1NHA2613.webp": "/wedding/static/media/1NHA2613.891a6193eaa1f70d1a24.webp",
     "static/media/LeJourScript-Eaqpg.woff": "/wedding/static/media/LeJourScript-Eaqpg.9f551ea850163b063d72.woff",
     "static/media/bg-music.webp": "/wedding/static/media/bg-music.bae517d9414459b85f4a.webp",
     "static/media/heart.webp": "/wedding/static/media/heart.9802e387642e8ac3261e.webp",
     "index.html": "/wedding/index.html",
-    "main.59c8b495.css.map": "/wedding/static/css/main.59c8b495.css.map",
-    "main.b5ca2faf.js.map": "/wedding/static/js/main.b5ca2faf.js.map",
-    "121.4755609c.chunk.js.map": "/wedding/static/js/121.4755609c.chunk.js.map",
+    "main.6a5dff16.css.map": "/wedding/static/css/main.6a5dff16.css.map",
+    "main.0266ea56.js.map": "/wedding/static/js/main.0266ea56.js.map",
+    "121.7461ad9b.chunk.js.map": "/wedding/static/js/121.7461ad9b.chunk.js.map",
     "reactPlayerYouTube.2b696570.chunk.js.map": "/wedding/static/js/reactPlayerYouTube.2b696570.chunk.js.map",
     "reactPlayerSoundCloud.9c080b91.chunk.js.map": "/wedding/static/js/reactPlayerSoundCloud.9c080b91.chunk.js.map",
     "reactPlayerVimeo.01b78554.chunk.js.map": "/wedding/static/js/reactPlayerVimeo.01b78554.chunk.js.map",
@@ -57,11 +56,11 @@
     "reactPlayerKaltura.2fbdd32a.chunk.js.map": "/wedding/static/js/reactPlayerKaltura.2fbdd32a.chunk.js.map",
     "reactPlayerFilePlayer.ad87b71d.chunk.js.map": "/wedding/static/js/reactPlayerFilePlayer.ad87b71d.chunk.js.map",
     "reactPlayerPreview.5b3a7876.chunk.js.map": "/wedding/static/js/reactPlayerPreview.5b3a7876.chunk.js.map",
-    "462.f8fb6004.chunk.css.map": "/wedding/static/css/462.f8fb6004.chunk.css.map",
-    "462.93595ad6.chunk.js.map": "/wedding/static/js/462.93595ad6.chunk.js.map"
+    "774.9abddc89.chunk.css.map": "/wedding/static/css/774.9abddc89.chunk.css.map",
+    "774.f8afa416.chunk.js.map": "/wedding/static/js/774.f8afa416.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.59c8b495.css",
-    "static/js/main.b5ca2faf.js"
+    "static/css/main.6a5dff16.css",
+    "static/js/main.0266ea56.js"
   ]
 }
